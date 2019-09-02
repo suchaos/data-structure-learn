@@ -2,6 +2,7 @@ package tree;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 递归遍历树
@@ -62,6 +63,25 @@ public class TreeTraversals {
         System.out.println(node.data);
     }
 
+    /**
+     * 广度优先遍历
+     * @param node
+     */
+    public static void leverOrder(TreeNode node) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(node);
+        while (!queue.isEmpty()) {
+            TreeNode treeNode = queue.poll();
+            System.out.println(treeNode.data);
+            if (treeNode.leftChild != null) {
+                queue.offer(treeNode.leftChild);
+            }
+            if (treeNode.rightChild != null) {
+                queue.offer(treeNode.rightChild);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         LinkedList<Integer> inputList = new LinkedList<>(
                 Arrays.asList(3, 2, 9, null, null, 10, null, null, 8, null, 4));
@@ -72,5 +92,7 @@ public class TreeTraversals {
         inOrder(treeNode);
         System.out.println("postOrder: ");
         postOrder(treeNode);
+        System.out.println("leverOrder: ");
+        leverOrder(treeNode);
     }
 }
