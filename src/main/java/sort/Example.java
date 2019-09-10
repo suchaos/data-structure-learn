@@ -5,16 +5,20 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 /**
  * 排序模板类
+ *
+ * args: ./src/main/resources/wordsForExampleTest.txt
  *
  * @author suchao
  * @date 2018/10/20
  */
 public class Example {
     public static void sort(Comparable[] a) {
-        
+
     }
 
     private static boolean less(Comparable v, Comparable w) {
@@ -44,7 +48,6 @@ public class Example {
     }
 
     public static void main(String[] args) {
-        // args[0] = ""data_structure_practice/src/main/resources/wordsForExampleTest.txt""
         String[] a = new In(args[0]).readAllStrings();
         show(a);
         sort(a);
