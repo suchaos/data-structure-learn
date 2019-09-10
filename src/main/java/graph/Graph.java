@@ -2,6 +2,7 @@ package graph;
 
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 
 /**
  * Graph
@@ -62,17 +63,67 @@ public class Graph {
         return adj[v];
     }
 
+    public int degree(int v) {
+        int degree = 0;
+        for (int w : this.adj(v)) {
+            degree++;
+        }
+        return degree;
+    }
+
+    public int maxDegree() {
+        int max = 0;
+        int degree;
+        for (int v = 0; v < this.V(); v++) {
+            degree = this.degree(v);
+            if (degree > max) {
+                max = degree;
+            }
+        }
+        return max;
+    }
+
+    public double avgDegree() {
+        return 2.0 * this.E() / this.V();
+    }
+
+    /**
+     * 计算自环的个数
+     *
+     * @return 自环的个数
+     */
+    public int numberOfSelfLoops() {
+        int count = 0;
+        for (int v = 0; v < this.V(); v++) {
+            for (int w : this.adj(v)) {
+                if (v == w) {
+                    count++;
+                }
+            }
+        }
+        // 因为在无向图中每条边被记过两次
+        return count / 2;
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder().append(V).append(" vertices, ").
                 append(E).append(" edges").append("\n");
         for (int v = 0; v < V; v++) {
-            s.append(V).append(": ");
+            s.append(v).append(": ");
             for (int w : this.adj(v)) {
                 s.append(w).append(" ");
             }
             s.append("\n");
         }
         return s.toString();
+    }
+
+    public static void main(String[] args) {
+        String prefix = "./src/main/resources/";
+        String fileName = "tinyG.txt";
+        In in = new In(prefix + fileName);
+        Graph G = new Graph(in);
+        StdOut.println(G);
     }
 }

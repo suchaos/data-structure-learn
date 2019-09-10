@@ -29,4 +29,3 @@ hs_err_pid*
 **/target
 **/*.ser
 **/algs4-data/
-*.txt
