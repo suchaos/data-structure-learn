@@ -3,15 +3,18 @@ package graph;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
+import directedGraph.DirectedDFS;
+
 /**
  * 深度优先搜索
  * <p>
- * args: tinyG.txt 0
+ * args: ./src/main/resources/tinyG.txt 0
  * <p>
- * args: tinyG.txt 9
+ * args: ./src/main/resources/tinyG.txt 9
  *
  * @author suchao
  * @date 2019/9/9
+ * @see DirectedDFS
  */
 public class DepthFirstSearch {
 
@@ -43,8 +46,7 @@ public class DepthFirstSearch {
     }
 
     public static void main(String[] args) {
-        String prefix = "./src/main/resources/";
-        Graph graph = new Graph(new In(prefix + args[0]));
+        Graph graph = new Graph(new In(args[0]));
         int s = Integer.parseInt(args[1]);
         DepthFirstSearch search = new DepthFirstSearch(graph, s);
         for (int v = 0; v < graph.V(); v++) {

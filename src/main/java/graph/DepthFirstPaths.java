@@ -1,5 +1,6 @@
 package graph;
 
+import directedGraph.DepthFirstDirectedPaths;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -29,6 +30,7 @@ import java.util.LinkedList;
  *
  * @author suchao
  * @date 2019/9/2
+ * @see DepthFirstDirectedPaths
  */
 public class DepthFirstPaths {
 

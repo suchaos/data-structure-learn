@@ -1,5 +1,6 @@
 package graph;
 
+import directedGraph.BreadthFirstDirectedPaths;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -21,6 +22,7 @@ import java.util.Queue;
  *
  * @author suchao
  * @date 2019/9/2
+ * @see BreadthFirstDirectedPaths
  */
 public class BreadthFirstPaths {
 
