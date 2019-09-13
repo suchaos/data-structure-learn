@@ -1,4 +1,4 @@
-package directedGraph;
+package graph.directedGraph;
 
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;

@@ -1,9 +1,9 @@
-package graph;
+package graph.graph;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
-import directedGraph.DirectedDFS;
+import graph.directedGraph.DirectedDFS;
 
 /**
  * 深度优先搜索

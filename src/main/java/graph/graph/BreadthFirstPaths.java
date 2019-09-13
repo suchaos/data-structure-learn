@@ -1,6 +1,6 @@
-package graph;
+package graph.graph;
 
-import directedGraph.BreadthFirstDirectedPaths;
+import graph.directedGraph.BreadthFirstDirectedPaths;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 

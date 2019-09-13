@@ -1,10 +1,9 @@
-package directedGraph;
+package graph.directedGraph;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.ST;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
-import graph.Graph;
 
 /**
  * 顶点名为字符串的图

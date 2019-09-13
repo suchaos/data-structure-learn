@@ -1,9 +1,9 @@
-package directedGraph;
+package graph.directedGraph;
 
 import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
-import graph.DepthFirstSearch;
+import graph.graph.DepthFirstSearch;
 
 /**
  * 有向图的可达性

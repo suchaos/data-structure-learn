@@ -1,8 +1,7 @@
-package directedGraph;
+package graph.directedGraph;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
-import graph.Graph;
 
 import java.util.LinkedList;
 import java.util.Queue;

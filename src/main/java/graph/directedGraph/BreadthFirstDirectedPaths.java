@@ -1,9 +1,8 @@
-package directedGraph;
+package graph.directedGraph;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
-import graph.BreadthFirstPaths;
-import graph.Graph;
+import graph.graph.BreadthFirstPaths;
 
 import java.util.Deque;
 import java.util.LinkedList;
