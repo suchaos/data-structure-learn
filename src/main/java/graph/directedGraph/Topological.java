@@ -1,6 +1,8 @@
 package graph.directedGraph;
 
 import edu.princeton.cs.algs4.StdOut;
+import graph.edgeWeightedDigraph.EdgeWeightedDigraph;
+import graph.edgeWeightedDigraph.EdgeWeightedDirectedCycle;
 
 /**
  * 拓扑排序
@@ -11,6 +13,7 @@ import edu.princeton.cs.algs4.StdOut;
  *
  * @author suchao
  * @date 2019/9/12
+ * @see
  */
 public class Topological {
 
@@ -23,6 +26,15 @@ public class Topological {
         DirectedCycle cyclefinder = new DirectedCycle(digraph);
         // 拓扑排序的前提是没有有向环
         if (!cyclefinder.hasCycle()) {
+            DepthFirstOrder dfs = new DepthFirstOrder(digraph);
+            order = dfs.reversePost();
+        }
+    }
+
+    public Topological(EdgeWeightedDigraph digraph) {
+        EdgeWeightedDirectedCycle finder = new EdgeWeightedDirectedCycle(digraph);
+        // 拓扑排序的前提是没有有向环
+        if (!finder.hasCycle()) {
             DepthFirstOrder dfs = new DepthFirstOrder(digraph);
             order = dfs.reversePost();
         }

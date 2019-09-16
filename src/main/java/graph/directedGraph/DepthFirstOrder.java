@@ -4,6 +4,8 @@ import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdOut;
+import graph.edgeWeightedDigraph.DirectedEdge;
+import graph.edgeWeightedDigraph.EdgeWeightedDigraph;
 
 /**
  * 有向图中基于深度优先搜索的顶点排序
@@ -46,10 +48,36 @@ public class DepthFirstOrder {
         }
     }
 
+    public DepthFirstOrder(EdgeWeightedDigraph digraph) {
+        marked = new boolean[digraph.V()];
+        pre = new Queue<>();
+        post = new Queue<>();
+        reversePost = new Stack<>();
+
+        for (int s = 0; s < digraph.V(); s++) {
+            if (!marked[s]) {
+                dfs(digraph, s);
+            }
+        }
+    }
+
     private void dfs(Digraph digraph, int v) {
         pre.enqueue(v);
         marked[v] = true;
         for (int w : digraph.adj(v)) {
+            if (!marked[w]) {
+                dfs(digraph, w);
+            }
+        }
+        post.enqueue(v);
+        reversePost.push(v);
+    }
+
+    private void dfs(EdgeWeightedDigraph digraph, int v) {
+        pre.enqueue(v);
+        marked[v] = true;
+        for (DirectedEdge e : digraph.adj(v)) {
+            int w = e.to();
             if (!marked[w]) {
                 dfs(digraph, w);
             }
