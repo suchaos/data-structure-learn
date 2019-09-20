@@ -20,11 +20,15 @@ public class SuKMP {
         int patLength = pat.length();
         dfa = new int[this.R][patLength];
         dfa[pat.charAt(0)][0] = 1;
+        // dfa[][] 从第二列开始计算值，第一列直接赋值（一个 1，其他都是 0）
         for (int x = 0, j = 1; j < patLength; j++) {
+            // 匹配失败的情况下
             for (int c = 0; c < this.R; c++) {
                 dfa[c][j] = dfa[c][x];
             }
+            // 匹配成功的情况下
             dfa[pat.charAt(j)][j] = j + 1;
+            // 更新 x
             x = dfa[pat.charAt(j)][x];
         }
     }
