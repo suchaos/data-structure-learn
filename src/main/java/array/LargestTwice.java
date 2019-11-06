@@ -4,8 +4,9 @@ package array;
  * 747. 至少是其他数字两倍的最大数
  *
  * @author suchao
- * @link https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/description/
  * @date 2018/10/22
+ * @see <a href="https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/description/">
+ * https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/description/</a>
  */
 public class LargestTwice {
 
@@ -48,7 +49,7 @@ public class LargestTwice {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{0,0,2,3};
+        int[] nums = new int[]{0, 0, 2, 3};
         System.out.println(dominantIndex2(nums));
     }
 }

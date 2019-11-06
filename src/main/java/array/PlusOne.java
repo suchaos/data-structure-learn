@@ -6,8 +6,9 @@ import java.util.Arrays;
  * 66. 加一
  *
  * @author suchao
- * @link https://leetcode-cn.com/problems/plus-one/description/
  * @date 2018/10/22
+ * @see <a href="https://leetcode-cn.com/problems/plus-one/description/">
+ * https://leetcode-cn.com/problems/plus-one/description/</a>
  */
 public class PlusOne {
     /**

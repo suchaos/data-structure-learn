@@ -4,8 +4,9 @@ package array;
  * 498. 对角线遍历
  *
  * @author suchao
- * @link https://leetcode-cn.com/problems/diagonal-traverse/description/
  * @date 2018/10/26
+ * @see <a href="https://leetcode-cn.com/problems/diagonal-traverse/description/">
+ * https://leetcode-cn.com/problems/diagonal-traverse/description/</a>
  */
 public class DiagonalTraverse {
 

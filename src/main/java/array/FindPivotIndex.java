@@ -4,8 +4,9 @@ package array;
  * 724. 寻找数组的中心索引
  *
  * @author suchao
- * @link https://leetcode-cn.com/problems/find-pivot-index/description/
  * @date 2018/10/22
+ * @see <a href="https://leetcode-cn.com/problems/find-pivot-index/description/">
+ * https://leetcode-cn.com/problems/find-pivot-index/description/</a>
  */
 public class FindPivotIndex {
     // 暴力破解 ---- 时间复杂度： O(n*n)
@@ -44,7 +45,7 @@ public class FindPivotIndex {
     }
 
     public static void main(String[] args) {
-        System.out.println(pivotIndex2(new int[]{1,7,3,6,5,6}));
-        System.out.println(pivotIndex2(new int[]{-1,-1,-1,0,1,1}));
+        System.out.println(pivotIndex2(new int[]{1, 7, 3, 6, 5, 6}));
+        System.out.println(pivotIndex2(new int[]{-1, -1, -1, 0, 1, 1}));
     }
 }
