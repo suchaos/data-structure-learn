@@ -1,4 +1,4 @@
-package backtracking;
+package advancedsearch.backtracking;
 
 /**
  * 70. 爬楼梯

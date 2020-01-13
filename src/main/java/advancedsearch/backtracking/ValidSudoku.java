@@ -1,4 +1,4 @@
-package backtracking;
+package advancedsearch.backtracking;
 
 import java.util.HashMap;
 import java.util.HashSet;

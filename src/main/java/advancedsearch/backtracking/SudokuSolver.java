@@ -1,4 +1,4 @@
-package backtracking;
+package advancedsearch.backtracking;
 
 /**
  * 37. 解数独

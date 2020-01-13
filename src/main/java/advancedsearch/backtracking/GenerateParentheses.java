@@ -1,4 +1,4 @@
-package backtracking;
+package advancedsearch.backtracking;
 
 import java.util.ArrayList;
 import java.util.List;

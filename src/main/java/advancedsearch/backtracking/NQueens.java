@@ -1,6 +1,4 @@
-package backtracking;
-
-import com.sun.org.apache.regexp.internal.RE;
+package advancedsearch.backtracking;
 
 import java.util.*;
 
