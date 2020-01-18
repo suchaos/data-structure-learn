@@ -29,7 +29,9 @@ public class MergeSort2 {
         }
 
         // 取 p 到 r 之间的中间位置 q
-        int q = (p + r) / 2;
+        // int q = (p + r) / 2;
+        int q = p + (r - p) >> 2;
+        // int q = (p + r) >> 2;
         // 分治递归
         mergeSortInternally(a, p, q);
         mergeSortInternally(a, p + 1, r);
@@ -38,13 +40,13 @@ public class MergeSort2 {
         merge(a, p, q, r);
     }
 
-    private static void merge(int[] a, int p, int q, int r) {
-        int i = p;
-        int j = q + 1;
+    private static void merge(int[] a, int left, int mid, int right) {
+        int i = left;
+        int j = mid + 1;
         int k = 0;
-        int[] tmp = new int[r - p + 1];
+        int[] tmp = new int[right - left + 1];
 
-        while (i <= q && j <= r) {
+        while (i <= mid && j <= right) {
             if (a[i] <= a[j]) {
                 tmp[k++] = a[i++];
             } else {
@@ -54,10 +56,10 @@ public class MergeSort2 {
 
         // 判断哪个子数组有剩余的数据
         int start = i;
-        int end = q;
-        if (j <= r) {
+        int end = mid;
+        if (j <= right) {
             start = j;
-            end = r;
+            end = right;
         }
 
         // 将剩余的数据拷贝到临时数组 tmp
@@ -66,8 +68,39 @@ public class MergeSort2 {
         }
 
         // 将 tmp 中的数组拷贝回 a[p...r]
-        for (i = 0; i < r-p; i++) {
-            a[p + i] = tmp[i];
+        for (i = 0; i < right - left; i++) {
+            a[left + i] = tmp[i];
         }
+    }
+
+    private static void merge2(int[] arr, int left, int mid, int right) {
+        // 1. 申请临时空间
+        int[] tmp = new int[right - left + 1];
+
+        // 2. 定义变量开始 merge
+        int i = left, j = mid + 1, k = 0;
+
+        /*
+           3. merge:
+              1. 两个数组都存在数据，哪个小就放到临时数组中
+              2. 如果左边数组没有全部移过去，则说明右边已经没有数据了，将数据移动到临时数组中去
+              3. 右边同理
+         */
+        while (i <= mid && j <= right) {
+            tmp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
+        }
+        while (i <= mid) {
+            tmp[k++] = arr[i++];
+        }
+        while (j <= right) {
+            tmp[k++] = arr[j++];
+        }
+        // 4. 将临时数组中的数据复制到指定数组中去
+        for (int m = 0; m < tmp.length; m++) {
+            arr[m + left] = tmp[m];
+        }
+        // if (tmp.length >= 0) {
+        //     System.arraycopy(tmp, 0, arr, 0, tmp.length);
+        // }
     }
 }

@@ -16,6 +16,7 @@ import java.util.Arrays;
  * <p>
  * 快排是一种原地，不稳定的排序算法
  * 最好时间复杂度：O(nlogn)
+ *
  * 最差时间复杂度：O(n*n)
  * 平均时间复杂度：O(nlogn)
  */
@@ -38,6 +39,7 @@ public class QuickSort2 {
 
     private static int partition(int[] a, int p, int r) {
         int pivot = a[r];
+        // i 左边都是小于 pivot 的元素
         int i = p;
         for (int j = p; j < r; j++) {
             if (a[j] < pivot) {
